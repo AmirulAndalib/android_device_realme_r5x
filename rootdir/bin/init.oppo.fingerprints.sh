@@ -1,4 +1,10 @@
 #!/system/bin/sh
+
+FP=$(cat /proc/fp_id | grep E_520)
+if [ -z $FP = "E_520" ]; then
+    setprop persist.vendor.fingerprint.fp_id E_520
+fi
+
 #16051 config
 chown system:system /sys/bus/platform/devices/soc:fpc_fpc1020*/irq
 chown system:system /sys/bus/platform/devices/soc:fpc_fpc1020*/irq_enable
