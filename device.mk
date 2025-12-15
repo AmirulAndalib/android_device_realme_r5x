@@ -84,10 +84,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libsuspend
 
-# Configstore
-PRODUCT_PACKAGES += \
-    disable_configstore
-
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
@@ -96,14 +92,15 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.4-service \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
-    vendor.qti.hardware.memtrack-service \
+    vendor.qti.hardware.display.allocator-service \
+    vendor.qti.hardware.memtrack-service
+
+PRODUCT_PACKAGES += \
     gralloc.qcom \
-    hwcomposer.qcom \
-    libdisplayconfig.system.qti \
-    libdisplayconfig.qti \
-    libtinyxml \
-    libtinyxml2 \
-    vendor.qti.hardware.display.allocator-service
+    hwcomposer.qcom
+
+PRODUCT_PACKAGES += \
+    disable_configstore
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
